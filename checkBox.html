@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>CheckBox</title>
+</head>
+<body>
+
+    <div x-data="{
+        agreed: ''  ,
+        }"
+    >
+        <input type="checkbox" x-model="agreed">
+        <span x-show="agreed">You have Agree</span>
+    </div>
+
+    <div x-data="{
+            records: [],
+        }"
+    >
+        <input type="checkbox" name="record_1" x-model="records" value="1">
+        <input type="checkbox" name="record_2" x-model="records" value="2">
+        <input type="checkbox" name="record_3" x-model="records" value="3">
+        <input type="checkbox" name="record_4" x-model="records" value="4">
+        <input type="checkbox" name="record_5" x-model="records" value="5">
+        <input type="checkbox" name="record_6" x-model="records" value="6">
+        
+        <span x-text="records"></span>
+    </div>
+
+    <div x-data="{
+            records: [],
+        }"
+    >
+        <input type="checkbox" x-model="records" value="1">
+        <input type="checkbox" x-model="records" value="2">
+        <input type="checkbox" x-model="records" value="3">
+        <input type="checkbox" x-model="records" value="4">
+        <input type="checkbox" x-model="records" value="5">
+        <input type="checkbox" x-model="records" value="6">
+        
+        <span x-text="records"></span>
+    </div>
+
+    <div x-data="{
+        plan: '',
+    }">
+
+        <select x-model="plan">
+            <option value=""  selected>Please choose</option>
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+        </select>
+
+        <div x-show="plan">
+            <span x-text="`You have chosen the ${plan} plan.`"></span>
+        </div>
+    </div>
+
+    <div x-data="{
+        plan: ''  ,
+    }">
+
+        <input type="radio"  value="monthly" x-model="plan">
+        <input type="radio"  value="yearly" x-model="plan">
+
+        <div x-show="plan">
+            <span x-text="`You have chosen ${plan} plan.`"></span>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
